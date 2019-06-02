@@ -1,7 +1,9 @@
 const add = () => {
     let number = 0;
-    number++;
-    document.body.textContent = `aktualne numer kliknięcia to ${number}`;
+    return () => {
+        number++;
+        document.body.textContent = `Aktualne numer kliknięcia to ${number}`;
+    }
 }
-
-document.addEventListener('click', add);
+const counter = add()
+document.addEventListener('click', counter);
